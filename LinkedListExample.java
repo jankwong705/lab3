@@ -12,7 +12,7 @@ class Node {
 class LinkedList {
     Node root;
     public LinkedList() {
-        this.root = null;
+        this.root = null; 
     }
     /**
      * Adds the value to the _beginning_ of the list
@@ -20,7 +20,7 @@ class LinkedList {
      */
     public void prepend(int value) {
         // Just add at the beginning
-        this.root = new Node(value, this.root);
+        this.root = new Node(value, this.root);     //make sense
     }
     /**
      * Adds the value to the _end_ of the list
@@ -33,21 +33,21 @@ class LinkedList {
         }
         // If it's just one element, add if after that one
         Node n = this.root;
-        if(n.next == null) {
+        if(n.next == null) {        
             n.next = new Node(value, null);
             return;
         }
         // Otherwise, loop until the end and add at the end with a null
-        while(n.next != null) {
+        while(n.next != null) { //shouldn't the n.next = be outside? and this does not return -> infinite loop
             n = n.next;
-            n.next = new Node(value, null);
+            n.next = new Node(value, null); //put it outside
         }
     }
     /**
      * @return the value of the first element in the list
      */
     public int first() {
-        return this.root.value;
+        return this.root.value; //make sense 
     }
     /**
      * @return the value of the last element in the list
@@ -55,7 +55,7 @@ class LinkedList {
     public int last() {
         Node n = this.root;
         // If no such element, throw an exception
-        if(n == null) { throw new NoSuchElementException(); }
+        if(n == null) { throw new NoSuchElementException(); }           //i think this is ok 
         // If it's just one element, return its value
         if(n.next == null) { return n.value; }
         // Otherwise, search for the end of the list and return the last value
@@ -69,7 +69,7 @@ class LinkedList {
      */
     public String toString() {
         Node n = this.root;
-        String s = "";
+        String s = "";          //i think its ok
         while(n != null) {
             s += n.value + " ";
             n = n.next;
@@ -81,7 +81,7 @@ class LinkedList {
      */
     public int length() {
         Node n = this.root;
-        int i = 0;
+        int i = 0;              //i think its ok
         while(n != null) {
             i += 1;
             n = n.next;
