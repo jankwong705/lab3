@@ -12,6 +12,19 @@ public class LinkedListTests {
         input.prepend(2);
         input.prepend(1);
         input.append(4);
-        assertEquals(4, input.root);
+        assertEquals(1, input.first());
+        assertEquals(2, input.root.next.value);
+        assertEquals(3, input.root.next.next.value);
+        assertEquals(4, input.last());
+    }
+
+    @Test
+    public void testToString() {
+        LinkedList input = new LinkedList();
+        input.prepend(3);
+        input.prepend(2);
+        input.prepend(1);
+        input.append(4);
+        assertEquals("1 2 3 4 ", input.toString());
     }
 }
